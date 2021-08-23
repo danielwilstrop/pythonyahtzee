@@ -52,7 +52,7 @@ class Dice():
         return random.randint(1, 6)
 
     def print_dice(self,index):
-       return self.display[index]
+        return self.display[index]
     
 
     

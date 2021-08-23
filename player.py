@@ -34,7 +34,10 @@ class Player:
         for i in range(len(self.dice)):
             if array[i] == 'y':
                 self.chosen_dice.append(self.dice[i])
-        self.dice = self.chosen_dice   
+        self.dice = self.chosen_dice 
+
+
+
             
 
 #roll dice 
