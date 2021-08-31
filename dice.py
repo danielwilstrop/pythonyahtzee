@@ -1,7 +1,7 @@
 import random
 
 class Dice():
-    display = ["""
+    display = [None,"""
     +--------+
     |        |
     |    O   |

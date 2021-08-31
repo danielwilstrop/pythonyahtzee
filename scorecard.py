@@ -1,4 +1,3 @@
-from collections import Counter
 
 class Scorecard:
     scores = [{1:0, 2:0, 3:0, 4:0, 5:0, 6:0},
@@ -63,8 +62,20 @@ class Scorecard:
             self.scores[4] = {'FullHouse':0}
 
     def small_straight(self, list):
-        smallest_num = min(list)
-        if smallest_num + 1 in list and smallest_num + 2 in list and smallest_num +3 in list:
+        s = set(list)
+        if s == {1,2,3,4}:
+            self.scores[5] = {'Small Straight':30}
+        if s == {2,3,4,5}:
+            self.scores[5] = {'Small Straight':30}
+        if s == {3,4,5,6}:
+            self.scores[5] = {'Small Straight':30}
+        if s == {1,3,4,5,6}:
+            self.scores[5] = {'Small Straight':30}
+        if s == {1,2,3,4,6}:
+            self.scores[5] = {'Small Straight':30}
+        if s == {1,2,3,4,5}:
+            self.scores[5] = {'Small Straight':30}
+        if s == {2,3,4,5,6}:
             self.scores[5] = {'Small Straight':30}
         else:
             self.scores[5] = {'Small Straight':0}
@@ -84,16 +95,6 @@ class Scorecard:
     
     def chance(self, list):
         self.scores[8] = {"Chance": sum(list)}
-
-
-#Tests
-three = [6,6,6,3,4]
-four = [4,4,4,4,6]
-small = [2,3,4,5,4]
-large = [1,2,3,4,5]
-yat = [2,2,2,2,2]
-fh = [3,4,4,3,4]
-
 
 
 
